@@ -94,13 +94,78 @@ public class RangeTest {
         assertEquals("The lower range between a Nan and 10.0 should be Nan",
         Double.MAX_VALUE, r.getUpperBound(), .000000001d);
     }
-    
 
+    //----- test cases for getLength() -----//
+    @Test
+    public void testGetLengthValidRange() {
+        Range range = new Range(-1.0, 1.0);
+        double result = range.getLength();
+        assertEquals(2.0, result, 0.0001);
+    }
+
+    @Test
+    public void testGetLengthSingletonRange() {
+        Range range = new Range(0.0, 0.0);
+        double result = range.getLength();
+        assertEquals(0.0, result, 0.0001);
+    }
     
+    @Test
+    public void testGetLengthBoundaryLowerRange() {
+        Range range = new Range(-1.0, -0.9);
+        double result = range.getLength();
+        assertEquals(0.1, result, 0.0001);
+    }
+
+    @Test
+    public void testGetLengthBoundaryUpperRange() {
+        Range range = new Range(0.9, 1.0);
+        double result = range.getLength();
+        assertEquals(0.1, result, 0.0001);
+    }
+
+    @Test
+    public void testGetLengthBoundarySingletonRange() {
+        Range range = new Range(-1.0, -1.0);
+        double result = range.getLength();
+        assertEquals(0.0, result, 0.0001);
+    }
+
+    //----- test cases for toString() -----//
+     @Test
+    public void testToStringValidRange() {
+        Range range = new Range(-1.0, 1.0);
+        String result = range.toString();
+        assertEquals("Range[-1.0,1.0]", result);
+    }
+
+    @Test
+    public void testToStringSingletonRange() {
+        Range range = new Range(0.0, 0.0);
+        String result = range.toString();
+        assertEquals("Range[0.0,0.0]", result);
+    }
     
-    
-    
-    
+    @Test
+    public void testToStringBoundaryLowerRange() {
+        Range range = new Range(-1.0, -0.9);
+        String result = range.toString();
+        assertEquals("Range[-1.0,-0.9]", result);
+    }
+
+    @Test
+    public void testToStringBoundaryUpperRange() {
+        Range range = new Range(0.9, 1.0);
+        String result = range.toString();
+        assertEquals("Range[0.9,1.0]", result);
+    }
+
+    @Test
+    public void testToStringBoundarySingletonRange() {
+        Range range = new Range(-1.0, -1.0);
+        String result = range.toString();
+        assertEquals("Range[-1.0,-1.0]", result);
+    }
 
     @After
     public void tearDown() throws Exception {
