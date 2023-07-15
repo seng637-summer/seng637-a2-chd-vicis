@@ -63,6 +63,16 @@ testCalculateColumnTotal_Values2DWithNaN | [NaN, 50.0, 100.0], 0 | Pass
 | testGetCumulativePercentages_NullKeyedValues           | null                                        | Pass   |
 | testGetCumulativePercentages_ZeroValues                | <0, 0.0>, <1, 0.0>, <2, 0.0>               | FAIL   |
 
+### `Range.toString()`
+
+Test case | Input partitions | Status
+--- | --- | ---
+testToStringValidRange | null | FAIL
+testToStringSingletonRange | null | Pass
+testToStringBoundaryLowerRange | null | FAIL
+testToStringBoundaryUpperRange | null | FAIL
+testToStringBoundarySingletonRange| null | Pass
+
 # 4 How the team work/effort was divided and managed
 
 Text…
