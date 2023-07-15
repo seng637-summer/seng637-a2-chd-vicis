@@ -105,6 +105,10 @@ Text…
 
 In summary, mocking is useful for isolating units and controlling testing, but it requires careful implementation. Consider the trade-offs and use additional techniques, like integration testing, for comprehensive coverage.
 
+## Challenges Encountered
+
+1. One of our challenges was determining the testing scope. We leveraged equivalence class partitioning and boundary value testing to formulate key test cases. This approach not only ensured broad coverage, but also prevented redundancy and inefficiency in the testing process, thereby optimizing the utilization of resources and time.
+
 # 6 Comments/feedback on the lab itself
 
-Text…
+1. This assignment has significantly enhanced our proficiency in creating effective unit tests and successfully mocking interfaces even in the absence of certain implemented classes, underscoring the essential skills required in software engineering.
