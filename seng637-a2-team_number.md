@@ -73,6 +73,16 @@ testToStringBoundaryLowerRange | null | FAIL
 testToStringBoundaryUpperRange | null | FAIL
 testToStringBoundarySingletonRange| null | Pass
 
+### `Range.getLength()`
+
+Test case | Input partitions | Status
+--- | --- | ---
+testGetLengthValidRange | null | Pass
+testGetLengthSingletonRange | null | Pass
+testGetLengthBoundaryLowerRange | null | Pass
+testGetLengthBoundaryUpperRange | null | Pass
+testGetLengthBoundarySingletonRange| null | Pass
+
 # 4 How the team work/effort was divided and managed
 
 Text…
