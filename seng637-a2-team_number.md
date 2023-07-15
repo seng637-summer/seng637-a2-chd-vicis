@@ -2,12 +2,13 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |     |
-| -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+| Group: SENG637- 2   |
+|-----------------|
+| Jash Dubal                |   
+| Steven Duong              |   
+| Nikhil Naikar               |   
+| Jason Xu                |
+| Christopher DiMattia                |
 
 # 1 Introduction
 
