@@ -92,11 +92,16 @@ Given a total of 10 methods to be tested, every member of the group was assigned
 
 Class | Method | Tester
 --- | --- | ---
-testToStringValidRange | null | FAIL
-testToStringSingletonRange | null | Pass
-testToStringBoundaryLowerRange | null | FAIL
-testToStringBoundaryUpperRange | null | FAIL
-testToStringBoundarySingletonRange| null | Pass
+Range | getLowerBound() | Christopher DiMattia 
+Range | getUpperBound() | Christopher DiMattia 
+Range | toString() | Steven Duong
+Range | getLength() | Steven Duong
+Range| combine(Range range1, Range range2) | Nikhil Naikar
+DataUtilities | createNumberArray2D(double[][] data) | Nikhil Naikar
+DataUtilities | calculateRowTotal(Values2D data, int row)  | Jason Xu
+DataUtilities | createNumberArray(double[] data) | Jason Xu
+DataUtilities | calculateColumnTotal(Values2D data, int column) | Jash Dubal
+DataUtilities| getCumulativePercentages(KeyedValues data) | Jash Dubal
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
