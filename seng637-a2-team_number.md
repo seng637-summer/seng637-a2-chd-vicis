@@ -124,7 +124,7 @@ In summary, mocking is useful for isolating units and controlling testing, but i
 ## Challenges Encountered
 
 1. One of our challenges was determining the testing scope. We leveraged equivalence class partitioning and boundary value testing to formulate key test cases. This approach not only ensured broad coverage, but also prevented redundancy and inefficiency in the testing process, thereby optimizing the utilization of resources and time.
-2. During the black box testing process, the group encountered unclear and ambiguous descriptions for certain methods, such as the "combine" method in the Range class. As black box testing restricts access to the code implementation, the group members had to heavily rely on their best guesses and assumptions to comprehend the functionality of these methods and anticipate the expected results they would produce.
+2. During the black box testing process, the group encountered unclear and ambiguous descriptions for certain methods, such as the "combine" method in the Range class. As black box testing restricts access to the code implementation, the group members had to heavily rely on their best guesses and assumptions to comprehend the functionality of these methods and anticipate the expected results they would produce.<br>
 Note: During the testing of the combine() method in the Range class, it was observed that when the order of the parameters was changed, an error warning was triggered indicating that the lower bound was greater than the upper bound. This behavior occurred instead of a simple test failure. However, when the order of the parameters was switched, the error disappeared.
 
 # 6 Comments/feedback on the lab itself
