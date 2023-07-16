@@ -12,7 +12,11 @@
 
 # 1 Introduction
 
-Text…
+The primary objective of this assignment was to conduct testing on 10 methods, with 5 methods from each of the Range class and DataUtilities class.
+
+The Range class is responsible for representing an unchangeable range of values, while the DataUtilities class contains utility methods designed for use with specific data classes. It should be noted that certain methods in the DataUtilities class utilize the Values2D and KeyedValues interfaces as input parameters. As a result, Mocking techniques might be employed to test these DataUtilities methods effectively.
+
+To perform the testing, Black Box test-case design techniques such as equivalence classes and boundary value analysis will be applied specifically for these 10 methods.
 
 # 2 Detailed description of unit test strategy
 
