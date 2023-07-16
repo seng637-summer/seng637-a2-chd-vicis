@@ -86,7 +86,17 @@ testGetLengthBoundarySingletonRange| null | Pass
 
 # 4 How the team work/effort was divided and managed
 
-Text…
+Given a total of 10 methods to be tested, every member of the group was assigned the responsibility of testing 2 methods.
+
+### `How the tested methods were divided:`
+
+Class | Method | Tester
+--- | --- | ---
+testToStringValidRange | null | FAIL
+testToStringSingletonRange | null | Pass
+testToStringBoundaryLowerRange | null | FAIL
+testToStringBoundaryUpperRange | null | FAIL
+testToStringBoundarySingletonRange| null | Pass
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
