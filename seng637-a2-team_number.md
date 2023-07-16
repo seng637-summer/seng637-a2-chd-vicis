@@ -20,7 +20,7 @@ To perform the testing, black-Box test-case design techniques such as equivalenc
 
 # 2 Detailed description of unit test strategy
 
-// including the input partitions you have designed
+// including the input partitions you have designed<br>
 The assignment was successfully completed by following these steps:
 
 1. Select 5 methods out of the 15 provided in the Range class for testing purposes.
