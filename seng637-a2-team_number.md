@@ -10,7 +10,7 @@
 | Jason Xu                |
 | Christopher DiMattia                |
 
-# 1 Introduction
+# 1 - Introduction
 
 The primary objective of this assignment was to conduct testing on 10 methods, with 5 methods from each of the Range class and DataUtilities class.
 
@@ -18,7 +18,7 @@ The Range class is responsible for representing an unchangeable range of values,
 
 To perform the testing, black-Box test-case design techniques such as equivalence classes and boundary value analysis were applied and designed specifically for each of the 10 methods.  The team successfully tested each method without errors, made note of why errors occurred and learned valuable lessons about automated unit testing, blackbox testing and JUnit which is discussed in detail below.
 
-# 2 Detailed description of unit test strategy
+# 2 - Detailed description of unit test strategy
 
 // including the input partitions you have designed<br>
 The general approach of the test strategy was to understand the requirements of each method by reading the provided JDoc, design different test cases for each individual method including normal inputs, boundary conditions and error cases (should throw exceptions), write and execute the test code and finally review the test cases and results with the entire team. 
@@ -58,7 +58,7 @@ The following 5 methods were chosen to be tested in the Range class:
 5. getLength()
 
 
-# 3 Test cases developed
+# 3 - Test cases developed
 
 Text…
 
@@ -152,7 +152,7 @@ getUpperBoundWithUpperNanValue | null | TODO
 getUpperBoundWithSameValue | null | TODO
 getUpperBoundWithMaximumValue| null | TODO
 
-# 4 How the team work/effort was divided and managed
+# 4 - How the team work/effort was divided and managed
 
 Given a total of 10 methods to be tested, every member of the group was assigned the responsibility of testing 2 methods.
 
@@ -188,7 +188,7 @@ Below is a summary of the benefits and drawbacks of mocking.
 
 In summary, mocking is useful for isolating units and controlling testing, but it requires careful implementation. Consider the trade-offs and use additional techniques, like integration testing, for comprehensive coverage.
 
-# 5 Difficulties encountered, challenges overcome, and lessons learned
+# 5 - Difficulties encountered, challenges overcome, and lessons learned
 
 ## Difficulties Encounted and Challenges Overcome
 
@@ -202,7 +202,7 @@ In summary, mocking is useful for isolating units and controlling testing, but i
 2. Blackbox testing requires a deep understanding of what to expect and ideally there should be communication between the testers and the developer who wrote the function to ensure the tests actually test the method properly and do not rely on interpretation.
 3. Mocking is a very strong tool that has many strengths in terms of speed, simplicity and the ability to isolate methods, but there are some drawbacks in that it adds complexity to a test which can causes tests to generate incorrect results, may not reflect system behavior and may not display dependency issues.
 
-# 6 Comments/feedback on the lab itself
+# 6 - Comments/feedback on the lab itself
 
 1. This assignment has significantly enhanced our proficiency in creating effective unit tests and successfully mocking interfaces even in the absence of certain implemented classes, underscoring the essential skills required in software engineering.
 2. The lab was interesting in that it highlighted how limited black box testing is, especially with respect to functions that are not well defined or understood and the testing may be even counter productive because a tester may pass a test when in reality the test was not set up properly because the expecte outcome was not aligned with the project scope or what the original developer intended.
