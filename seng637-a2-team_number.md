@@ -95,6 +95,26 @@ testGetLengthBoundaryLowerRange | null | Pass
 testGetLengthBoundaryUpperRange | null | Pass
 testGetLengthBoundarySingletonRange| null | Pass
 
+### `Range.getLowerBound()`
+
+Test case | Input partitions | Status
+--- | --- | ---
+getLowerBoundWithNormalValues | null | TODO
+getLowerBoundWithLowerNanValue | null | TODO
+getLowerBoundWithUpperNanValue | null | TODO
+getLowerBoundWithSameValue | null | TODO
+getLowerBoundWithMinimumValue| null | TODO
+
+### `Range.getUpperBound()`
+
+Test case | Input partitions | Status
+--- | --- | ---
+getUpperBoundWithNormalValues | null | TODO
+getUpperBoundWithLowerNanValue | null | TODO
+getUpperBoundWithUpperNanValue | null | TODO
+getUpperBoundWithSameValue | null | TODO
+getUpperBoundWithMaximumValue| null | TODO
+
 # 4 How the team work/effort was divided and managed
 
 Given a total of 10 methods to be tested, every member of the group was assigned the responsibility of testing 2 methods.
