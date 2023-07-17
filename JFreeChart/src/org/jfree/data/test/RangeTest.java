@@ -20,9 +20,7 @@ public class RangeTest {
     }
     
     
-    //My test code
-    
-    
+    // getLowerBound tests
     @Test
     public void getLowerBoundWithNormalValues() {
     	Range r = new Range(2.0, 10);
@@ -58,7 +56,7 @@ public class RangeTest {
         Double.MIN_NORMAL, r.getLowerBound(), .000000001d);
     }
 
-    
+    //getUpperBound tests
     
     @Test
     public void getUpperBoundWithNormalValues() {
@@ -95,7 +93,7 @@ public class RangeTest {
         Double.MAX_VALUE, r.getUpperBound(), .000000001d);
     }
 
-    //----- test cases for getLength() -----//
+    //getLength test
     @Test
     public void testGetLengthValidRange() {
         Range range = new Range(-1.0, 1.0);
@@ -131,7 +129,7 @@ public class RangeTest {
         assertEquals(0.0, result, 0.0001);
     }
 
-    //----- test cases for toString() -----//
+    //toString tests
      @Test
     public void testToStringValidRange() {
         Range range = new Range(-1.0, 1.0);
@@ -165,6 +163,104 @@ public class RangeTest {
         Range range = new Range(-1.0, -1.0);
         String result = range.toString();
         assertEquals("Range[-1.0,-1.0]", result);
+    }
+
+    //combine tests
+    public void combineWithBLB() {
+    	Range r = new Range(-1.1, 0);
+    	Range expected = new Range(-1.1, 1.0);
+
+    	assertSame("The range should be between -1.1 and 1.0", 
+        		expected, Range.combine(exampleRange, r));
+    }
+    
+    @Test
+    public void combineWithALB() {
+    	Range r = new Range(-0.9, 0.0);
+    	Range expected = new Range(-1.0, 1.0);
+
+    	assertSame("The range should be between -1.0 and 1.0", 
+        		expected, Range.combine(r, exampleRange));
+    }
+    
+    @Test
+    public void combineWithBUB() {
+    	Range r = new Range(0.0, 0.9);
+    	Range expected = new Range(-1.0, 1.0);
+
+    	assertSame("The range should be between -1.0 and 1.0", 
+        		expected, Range.combine(r, exampleRange));
+    }
+    
+    @Test
+    public void combineWithAUB() {
+    	Range r = new Range(0.0, 1.1);
+    	Range expected = new Range(-1.0, 1.1);
+
+    	assertSame("The range should be between -1.0 and 1.1", 
+        		expected, Range.combine(r, exampleRange));
+    }
+    
+    @Test
+    public void combineWithLB() {
+    	Range r = new Range(-1.0, 0.5);
+    	Range expected = new Range(-1.0, 1.0);
+
+    	assertSame("The range should be between -1.0 and 1.0", 
+        		expected, Range.combine( exampleRange, r));
+    }
+    
+    @Test
+    public void combineWithUB() {
+    	Range r = new Range(0.0, 1.0);
+    	Range expected = new Range(-1.0, 1.0);
+
+    	assertSame("The range should be between -1.0 and 1.0", 
+        		expected, Range.combine(r, exampleRange));
+    }
+    
+    @Test
+    public void combineWithNOM() {
+    	Range r = new Range(-0.5, 0.5);
+    	Range expected = new Range(-1.0, 1.0);
+
+    	assertSame("The range should be between -1.0 and 1.0", 
+        		expected, Range.combine(r, exampleRange));
+    }
+    
+    @Test
+    public void combineWithBothNull() {
+    	Range r1 = null;
+    	Range r2 = null;
+
+    	assertSame("The range should just be null", 
+        		null, Range.combine(r1, r2));
+    }
+    
+    @Test
+    public void combineWithFirstNull() {
+    	Range r = null;
+    	Range expected = new Range(-1.0, 1.0);
+
+    	assertSame("The range should be between -1.0 and 1.0", 
+        		expected, Range.combine(r, exampleRange));
+    }
+    
+    @Test
+    public void combineWithSecondNull() {
+    	Range r = null;
+    	Range expected = new Range(-1.0, 1.0);
+
+    	assertSame("The range should be between -1.0 and 1.0", 
+        		expected, Range.combine(exampleRange, r));
+    }
+    
+    @Test
+    public void combineWithSameRanges() {
+    	Range expected = new Range(-1.0, 1.0);
+
+    	assertSame("The range should be between -1.0 and 1.0", 
+        		expected, Range.combine(exampleRange, exampleRange));
     }
 
     @After
