@@ -20,7 +20,6 @@ To perform the testing, black-Box test-case design techniques such as equivalenc
 
 # 2 - Detailed description of unit test strategy
 
-// including the input partitions you have designed<br>
 The general approach of the test strategy was to understand the requirements of each method by reading the provided JDoc, design different test cases for each individual method including normal inputs, boundary conditions and error cases (should throw exceptions), write and execute the test code and finally review the test cases and results with the entire team. 
 
 Procedurally the assignment was successfully completed by following these steps:
@@ -60,7 +59,6 @@ The following 5 methods were chosen to be tested in the Range class:
 
 # 3 - Test cases developed
 
-Text…
 
 // write down the name of the test methods and classes. Organize the based on
 the source code method // they test. identify which tests cover which partitions
