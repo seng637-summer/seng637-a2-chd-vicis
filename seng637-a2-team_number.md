@@ -16,18 +16,21 @@ The primary objective of this assignment was to conduct testing on 10 methods, w
 
 The Range class is responsible for representing an unchangeable range of values, while the DataUtilities class contains utility methods designed for use with specific data classes. It should be noted that certain methods in the DataUtilities class utilize the Values2D and KeyedValues interfaces as input parameters. As a result, Mocking techniques might be employed to test these DataUtilities methods effectively.
 
-To perform the testing, black-Box test-case design techniques such as equivalence classes and boundary value analysis will be applied specifically for these 10 methods.
+To perform the testing, black-Box test-case design techniques such as equivalence classes and boundary value analysis were applied and designed specifically for each of the 10 methods.  The team successfully tested each method without errors, made note of why errors occurred and learned valuable lessons about automated unit testing, blackbox testing and JUnit which is discussed in detail below.
 
 # 2 Detailed description of unit test strategy
 
 // including the input partitions you have designed<br>
-The assignment was successfully completed by following these steps:
+The general approach of the test strategy was to understand the requirements of each method by reading the provided JDoc, design different test cases for each individual method including normal inputs, boundary conditions and error cases (should throw exceptions), write and execute the test code and finally review the test cases and results with the entire team. 
+
+Procedurally the assignment was successfully completed by following these steps:
 
 1. Select 5 methods out of the 15 provided in the Range class for testing purposes.
 2. Allocate 2 methods to each member of the group.
 3. Each member thoroughly reviewed the Javadocs associated with their assigned methods to gain a clear understanding of their intended functionality.
 4. Develop test cases using black-box test-case design techniques, including equivalence classes and boundary value analysis, to ensure comprehensive coverage.
 5. Implement the test cases by writing code, execute JUnit tests, and carefully document the results obtained during the testing process.
+6. Review the results and test cases as a team to ensure consistency and no errors.
 
 ## **DataUtilities**
 
