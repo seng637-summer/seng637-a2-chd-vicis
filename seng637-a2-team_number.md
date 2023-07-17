@@ -152,8 +152,6 @@ DataUtilities | createNumberArray(double[] data) | Jason Xu
 DataUtilities | calculateColumnTotal(Values2D data, int column) | Jash Dubal
 DataUtilities| getCumulativePercentages(KeyedValues data) | Jash Dubal
 
-# 5 Difficulties encountered, challenges overcome, and lessons learned
-
 ## Discussion of Mocking
 
 **Benefits:**
@@ -170,6 +168,8 @@ DataUtilities| getCumulativePercentages(KeyedValues data) | Jash Dubal
 
 In summary, mocking is useful for isolating units and controlling testing, but it requires careful implementation. Consider the trade-offs and use additional techniques, like integration testing, for comprehensive coverage.
 
+# 5 Difficulties encountered, challenges overcome, and lessons learned
+
 ## Difficulties Encounted and Challenges Overcome
 
 1. One of our challenges was determining the testing scope. We leveraged equivalence class partitioning and boundary value testing to formulate key test cases. This approach not only ensured broad coverage, but also prevented redundancy and inefficiency in the testing process, thereby optimizing the utilization of resources and time.
@@ -178,8 +178,9 @@ In summary, mocking is useful for isolating units and controlling testing, but i
 4. Mocks provided many challenges when testing, specifically it added complexity, fragility, a false sense of security and it limited integration validation.  The mocks added complexity as correct behavior must be defined for the mock objects.  Mocks increased test fragility because changes to the real implemenation can break tests if them ock objects don't accurately represent dependencies.  Mocks also have the potential to cause false posities by passing tests because they might not reflect the actual system behavior, so there is another failure point during testing in that the tester can inaccruatetly create mocks.  Finally mocks focus on the behavior and may not catch integration issues, so they limit the range of testing to just that specific boundary between the method and object.  Most of the above challenges were overcome by spending time discussing how to have the mocks best recreate the object they are emulating and having other testers verify that the mocks make sense.  It should also be noted that some of those challenges are not the responsilbiity of these tests, such as ensuring dependencies are reflecte in the mocks behaviour.
 
 ## Lessons Learned
-1. It is important to set up input parameters beforehand so every team memeber is using consistent inputs with respect to upper and lower bounds.  The team had to rerun tests that had drastically different input values.
-2. 
+1. It is important to set up input parameters beforehand so every team member is using consistent inputs with respect to upper and lower bounds.  The team had to rerun tests that had drastically different input values to ensure consistency between.
+2. Blackbox testing requires a deep understanding of what to expect and ideally there should be communication between the testers and the developer who wrote the function to ensure the tests actually test the method properly and do not rely on interpretation.
+3. Mocking is a very strong tool that has many strengths in terms of speed, simplicity and the ability to isolate methods, but there are some drawbacks in that it adds complexity to a test which can causes tests to generate incorrect results, may not reflect system behavior and may not display dependency issues.
 
 # 6 Comments/feedback on the lab itself
 
