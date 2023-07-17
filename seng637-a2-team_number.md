@@ -100,17 +100,17 @@ testCalculateColumnTotal_Values2DWithNaN | [NaN, 50.0, 100.0], 0 | Pass
 
 | Test case                                              | Input partitions                            | Status |
 | ------------------------------------------------------ | ------------------------------------------- | ------ |
-| testCreateNumberArray2DAllNegativeValues()         | 2X2 matrix filled with -0.5                                          | Pass   |
-| testCreateNumberArray2DAllPositiveValues()       | 2X2 matrix filled with 0.5                                     | FAIL   |
-| testCreateNumberArray2DLargeArray() | 4X4 matrix filled with -0.5 and 0.5                                   | FAIL   |
-| testCreateNumberArray2DSmallArray() | 2X2 matrix filled with -0.5 and 0.5                                  | FAIL   |
-| testCreateNumberArray2DEmpty()  | empty | FAIL   |
-| testCreateNumberArray2DBLB()         | <0, 5>, <1, 9>, <2, 2>                     | FAIL   |
-| testCreateNumberArray2DALB()           | null                                        | Pass   |
-| testCreateNumberArray2DBUB()                | <0, 0.0>, <1, 0.0>, <2, 0.0>               | FAIL   |
-| testCreateNumberArray2DAUB()        | <0, 5>, <1, 9>, <2, 2>                     | FAIL   |
-| testCreateNumberArray2DUB()           | null                                        | Pass   |
-| testCreateNumberArray2DLB()                | <0, 0.0>, <1, 0.0>, <2, 0.0>               | FAIL   |
+| testCreateNumberArray2DAllNegativeValues()         | 2X2 matrix filled with -0.5                                          |    |
+| testCreateNumberArray2DAllPositiveValues()       | 2X2 matrix filled with 0.5                                     |    |
+| testCreateNumberArray2DLargeArray() | 4X4 matrix filled with -0.5 and 0.5                                   |    |
+| testCreateNumberArray2DSmallArray() | 2X2 matrix filled with -0.5 and 0.5                                  |    |
+| testCreateNumberArray2DEmpty()  | empty matrix | FAIL   |
+| testCreateNumberArray2DBLB()         | 2X2 matrix filled with -1.1                     |    |
+| testCreateNumberArray2DALB()           | 2X2 matrix filled with -0.9                                        |    |
+| testCreateNumberArray2DBUB()                | 2X2 matrix filled with 0.9                |    |
+| testCreateNumberArray2DAUB()        | 2X2 matrix filled with 1.1                     |    |
+| testCreateNumberArray2DUB()           | 2X2 matrix filled with 1.0                                         |    |
+| testCreateNumberArray2DLB()                | 2X2 matrix filled with -1.0               |    |
 
 ### `Range.toString()`
 
