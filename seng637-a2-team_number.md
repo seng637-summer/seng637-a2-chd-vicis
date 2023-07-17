@@ -129,21 +129,21 @@ testGetLengthBoundarySingletonRange| null | Pass
 
 Test case | Input partitions | Status
 --- | --- | ---
-getLowerBoundWithNormalValues | null | TODO
-getLowerBoundWithLowerNanValue | null | TODO
-getLowerBoundWithUpperNanValue | null | TODO
-getLowerBoundWithSameValue | null | TODO
-getLowerBoundWithMinimumValue| null | TODO
+getLowerBoundWithNormalValues | <-1.0, 1.0> | PASS
+getLowerBoundWithLowerNanValue | <Nan, 1.0> | PASS
+getLowerBoundWithUpperNanValue | <-1.0, Nan> | PASS
+getLowerBoundWithSameValue | <1.0,1.0> | PASS
+getLowerBoundWithMinimumValue| null | PASS
 
 ### `Range.getUpperBound()`
 
 Test case | Input partitions | Status
 --- | --- | ---
-getUpperBoundWithNormalValues | null | TODO
-getUpperBoundWithLowerNanValue | null | TODO
-getUpperBoundWithUpperNanValue | null | TODO
-getUpperBoundWithSameValue | null | TODO
-getUpperBoundWithMaximumValue| null | TODO
+getUpperBoundWithNormalValues | null | FAIL
+getUpperBoundWithLowerNanValue | null | FAIL
+getUpperBoundWithUpperNanValue | null | FAIL
+getUpperBoundWithSameValue | null | PASS
+getUpperBoundWithMaximumValue| null | FAIL
 
 ### `Range.combine()`
 
