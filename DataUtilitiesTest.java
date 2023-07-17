@@ -2,6 +2,10 @@ package org.jfree.data;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.junit.Before;
@@ -216,11 +220,13 @@ public class DataUtilitiesTest extends DataUtilities {
         kv.addValue((Comparable<?>) 3, 10.5);
         kv.addValue((Comparable<?>) 4, 0.0);
         KeyedValues result = DataUtilities.getCumulativePercentages(kv);
-        assertEquals(0.25, result.getValue(0).doubleValue(), 0.000000001d);
-        assertEquals(0.6875, result.getValue(1).doubleValue(), 0.000000001d);
+        Map<Comparable, Double> expectedResults = new HashMap<>();
+        expectedResults.put(0, 0.25);
+        expectedResults.put(1, 0.6875);
+        expectedResults.put(3, 1.0);
+        expectedResults.put(4, 1.0);
+        expectedResults.keySet().forEach(key -> assertEquals(expectedResults.get(key), result.getValue(key).doubleValue(), 0.000000001d));
         assertNull(result.getValue(2));
-        assertEquals(1.0, result.getValue(3).doubleValue(), 0.000000001d);
-        assertEquals(1.0, result.getValue(4).doubleValue(), 0.000000001d);
     }
 
     @Test
@@ -229,9 +235,11 @@ public class DataUtilitiesTest extends DataUtilities {
         kv.addValue((Comparable<?>) 1, 9);
         kv.addValue((Comparable<?>) 2, 2);
         KeyedValues result = DataUtilities.getCumulativePercentages(kv);
-        assertEquals(0.3125, result.getValue(0).doubleValue(), 0.000000001d);
-        assertEquals(0.875, result.getValue(1).doubleValue(), 0.000000001d);
-        assertEquals(1.0, result.getValue(2).doubleValue(), 0.000000001d);
+        Map<Comparable, Double> expectedResults = new HashMap<>();
+        expectedResults.put(0, 0.3125);
+        expectedResults.put(1, 0.875);
+        expectedResults.put(2, 1.0);
+        expectedResults.keySet().forEach(key -> assertEquals(expectedResults.get(key), result.getValue(key).doubleValue(), 0.000000001d));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -246,10 +254,9 @@ public class DataUtilitiesTest extends DataUtilities {
         kv.addValue((Comparable<?>) 1, 0.0);
         kv.addValue((Comparable<?>) 2, 0.0);
         KeyedValues result = DataUtilities.getCumulativePercentages(kv);
-        assertNull(result.getValue(0));
-        assertNull(result.getValue(1));
-        assertNull(result.getValue(2));
+        Arrays.asList(0, 1, 2).forEach(key -> assertNull(result.getValue(key)));
     }
+	
     //Test createNumberArray method
 	@Test
 	public void createNumberArrayPositive() {
