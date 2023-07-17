@@ -33,9 +33,27 @@ The assignment was successfully completed by following these steps:
 
 jMock is used to mock the interfaces `Values2D` and `KeyedValues`. `Values2D` object is mocked as a 3*3 matrix holding double values. `KeyedValues` object is mocked holding Integer as key-value pairs. 
 
-For the `calculateColumnTotal` method, we will test with various column indices, including negative values, zero, and values greater than the number of columns in the data. We will also test with various data values, including positive numbers, zero, negative numbers, and NaN.
+In the testing of the methods within this class, we will assess a range of scenarios when possible to test all equivalence classes and all boundary value cases. These include using various column indices such as negative values, zero, and values greater than the total number of columns in the data. Additionally, we will examine different data values, including positive numbers, zero, negative numbers, and NaN. Furthermore, we will test with data that contains duplicate keys and data that has keys in a non-ascending order.
 
-For the `getCumulativePercentages` method, we will test with various data values, including positive numbers, zero, negative numbers, and NaN. We will also test with data that has duplicate keys and data that has keys in a non-ascending order.
+The following 5 methods were chosen to be tested in the DataUtilities class:
+1. calculateColumnTotal(Values2D data, int column)
+2. calculateRowTotal(Values2D data, int row)
+3. createNumberArray(double[] data)
+4. createNumberArray2D(double[][] data)
+5. getCumulativePercentages(KeyedValues data)
+
+
+## **Range**
+
+Mocking was unnecessary during the Range class testing. The testing process involved using an instance of the range from -1 to 1 to evaluate all 5 methods whenever feasible. Additionally, different ranges were employed for certain methods to examine specific conditions for Equivalence Class Testing, covering all potential input cases, and Boundary Value Testing, encompassing BLB, LB, ALB, BUB, UB, and AUB.
+
+The following 5 methods were chosen to be tested in the Range class:
+1. combine(Range range1, Range range2)
+2. getLowerBound()
+3. getUpperBound()
+4. toString()
+5. getLength()
+
 
 # 3 Test cases developed
 
