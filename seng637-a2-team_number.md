@@ -172,6 +172,7 @@ DataUtilities | calculateColumnTotal(Values2D data, int column) | Jash Dubal
 DataUtilities| getCumulativePercentages(KeyedValues data) | Jash Dubal
 
 ## Discussion of Mocking
+Below is a summary of the benefits and drawbacks of mocking.
 
 **Benefits:**
 1. Isolation of dependencies: Mocking helps test a unit without relying on its actual dependencies.
