@@ -59,11 +59,6 @@ The following 5 methods were chosen to be tested in the Range class:
 
 # 3 - Test cases developed
 
-
-// write down the name of the test methods and classes. Organize the based on
-the source code method // they test. identify which tests cover which partitions
-you have explained in the test strategy section //above
-
 ### `DataUtilities.calculateColumnTotal(Values2D, int)`
 
 Test case | Input partitions | Status
