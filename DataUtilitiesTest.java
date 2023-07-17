@@ -250,4 +250,213 @@ public class DataUtilitiesTest extends DataUtilities {
         assertNull(result.getValue(1));
         assertNull(result.getValue(2));
     }
+    //Test createNumberArray method
+	@Test
+	public void createNumberArrayPositive() {
+		double[] testInput = {1.0, 2.2,3.7};
+		Number[] testOutput = {1.0, 2.2,3.7};
+		
+		Number[] result = DataUtilities.createNumberArray(testInput);
+		
+		assertArrayEquals(testOutput, result);
+	}
+	@Test
+	public void createNumberArrayNegative() {
+		double[] testInput = {-1.0,-2.2,-3.7};
+		Number[] testOutput = {-1.0,-2.2,-3.7};
+		
+		Number[] result = DataUtilities.createNumberArray(testInput);
+		
+		assertArrayEquals(testOutput, result);
+	}
+	
+	@Test
+	public void createNumberArrayNullInput() {
+		try {
+			double[] testInput = null;
+			DataUtilities.createNumberArray(testInput);
+			fail("This method should throw an exception!");
+			// exception
+		} catch (Exception e) {
+			assertEquals("The exception thrown type is IllegalArgumentException", IllegalArgumentException.class,
+					e.getClass());
+			// catching the exception, asserting that an IllegalArgumentException was thrown
+		}
+	}
+	@Test
+	public void createNumberArrayZero() {
+		double[] testInput = {0,0};
+		Number[] testOutput = {0,0};
+		
+		Number[] result = DataUtilities.createNumberArray(testInput);
+		
+		assertArrayEquals(testOutput, result);
+	}
+	@Test
+	public void createNumberArrayEmpty() {
+		double[] testInput = {};
+		Number[] testOutput = {};
+		
+		Number[] result = DataUtilities.createNumberArray(testInput);
+		
+		assertArrayEquals(testOutput, result);
+	}
+	@Test
+	public void createNumberArraySingle() {
+		double[] testInput = {1.0};
+		Number[] testOutput = {1.0};
+		
+		Number[] result = DataUtilities.createNumberArray(testInput);
+		
+		assertArrayEquals(testOutput, result);
+	}
+
+	@Test
+	public void createNumberArrayMaxThree() {
+		double[] testInput = {Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE};
+		Number[] testOutput = {Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE};
+		
+		Number[] result = DataUtilities.createNumberArray(testInput);
+		
+		assertArrayEquals(testOutput, result);
+	}
+	@Test
+	public void createNumberArrayMinThree() {
+		double[] testInput = { Double.MIN_VALUE, Double.MIN_VALUE, Double.MIN_VALUE};
+		Number[] testOutput = { Double.MIN_VALUE, Double.MIN_VALUE, Double.MIN_VALUE};
+		
+		Number[] result = DataUtilities.createNumberArray(testInput);
+		
+		assertArrayEquals(testOutput, result);
+	}
+	//Test calculaterowtotal method
+	@Test
+    public void calculateRowTotalPositiveFirstRow() {
+        mockingContext.checking(new Expectations() {{
+            one(values).getColumnCount(); will(returnValue(3));
+            one(values).getValue(0, 0); will(returnValue(10.0));
+            one(values).getValue(0, 1); will(returnValue(20.0));
+            one(values).getValue(0, 2); will(returnValue(30.0));
+        }});
+
+        double result = DataUtilities.calculateRowTotal(values,0);
+        assertEquals(60.0, result, .000000001d);
+    }
+	@Test
+	public void calculateRowTotalNegativeFirstRow() {
+        mockingContext.checking(new Expectations() {{
+            one(values).getColumnCount(); will(returnValue(3));
+            one(values).getValue(0, 0); will(returnValue(-10.0));
+            one(values).getValue(0, 1); will(returnValue(-20.0));
+            one(values).getValue(0, 2); will(returnValue(-30.0));
+        }});
+
+        double result = DataUtilities.calculateRowTotal(values,0);
+        assertEquals(-60.0, result, .000000001d);
+    }
+	@Test
+    public void calculateRowTotalPositiveSecondRow() {
+        mockingContext.checking(new Expectations() {{
+            one(values).getColumnCount(); will(returnValue(3));
+            one(values).getValue(1, 0); will(returnValue(10.0));
+            one(values).getValue(1, 1); will(returnValue(20.0));
+            one(values).getValue(1, 2); will(returnValue(30.0));
+        }});
+
+        double result = DataUtilities.calculateRowTotal(values,1);
+        assertEquals(60.0, result, .000000001d);
+    }
+	@Test
+    public void calculateRowTotalPositiveThirdRow() {
+        mockingContext.checking(new Expectations() {{
+            one(values).getColumnCount(); will(returnValue(3));
+            one(values).getValue(2, 0); will(returnValue(10.0));
+            one(values).getValue(2, 1); will(returnValue(20.0));
+            one(values).getValue(2, 2); will(returnValue(30.0));
+        }});
+
+        double result = DataUtilities.calculateRowTotal(values,2);
+        assertEquals(60.0, result, .000000001d);
+    }
+	@Test
+	public void calculateRowTotalMaxValueFirstRow() {
+        mockingContext.checking(new Expectations() {{
+            one(values).getColumnCount(); will(returnValue(3));
+            one(values).getValue(0, 0); will(returnValue(Double.MAX_VALUE));
+            one(values).getValue(0, 1); will(returnValue(50.0));
+            one(values).getValue(0, 2); will(returnValue(-50.0));
+        }});
+
+        double result = DataUtilities.calculateRowTotal(values,0);
+        assertEquals(Double.MAX_VALUE, result, .000000001d);
+    }
+	@Test
+	public void calculateRowTotalNanFirstRow() {
+        mockingContext.checking(new Expectations() {{
+            one(values).getColumnCount(); will(returnValue(3));
+            one(values).getValue(0, 0); will(returnValue(Double.NaN));
+            one(values).getValue(0, 1); will(returnValue(50.0));
+            one(values).getValue(0, 2); will(returnValue(-50.0));
+        }});
+
+        double result = DataUtilities.calculateRowTotal(values,0);
+        assertEquals(Double.NaN, result, .000000001d);
+    }
+	@Test
+	public void calculateRowTotalMinValueFirstRow() {
+        mockingContext.checking(new Expectations() {{
+            one(values).getColumnCount(); will(returnValue(3));
+            one(values).getValue(0, 0); will(returnValue(Double.MIN_VALUE));
+            one(values).getValue(0, 1); will(returnValue(50.0));
+            one(values).getValue(0, 2); will(returnValue(-50.0));
+        }});
+
+        double result = DataUtilities.calculateRowTotal(values,0);
+        assertEquals(Double.MIN_VALUE, result, .00000001d);
+    }
+	
+	@Test
+	public void calculateRowTotalMaxIndexFirstRow() {
+        mockingContext.checking(new Expectations() {{
+            one(values).getColumnCount(); will(returnValue(3));
+            one(values).getValue(Integer.MAX_VALUE, 0); will(returnValue(10.0));
+            one(values).getValue(Integer.MAX_VALUE, 1); will(returnValue(20.0));
+            one(values).getValue(Integer.MAX_VALUE, 2); will(returnValue(30.0));
+        }});
+
+        double result = DataUtilities.calculateRowTotal(values,Integer.MAX_VALUE);
+        assertEquals(60.0, result, .000000001d);
+    }
+	@Test
+	public void calculateRowTotalMinIndexFirstRow() {
+        mockingContext.checking(new Expectations() {{
+            one(values).getColumnCount(); will(returnValue(3));
+            one(values).getValue(Integer.MIN_VALUE, 0); will(returnValue(10.0));
+            one(values).getValue(Integer.MIN_VALUE, 1); will(returnValue(20.0));
+            one(values).getValue(Integer.MIN_VALUE, 2); will(returnValue(30.0));
+        }});
+
+        double result = DataUtilities.calculateRowTotal(values,Integer.MIN_VALUE);
+        assertEquals(60.0, result, .000000001d);
+    }
+	@Test
+	public void calculateRowTotalEmpty() {
+		  mockingContext.checking(new Expectations() {{
+	            one(values).getColumnCount(); will(returnValue(0));
+	        }});
+
+	        double result = DataUtilities.calculateRowTotal(values,0);
+	        assertEquals(0, result, .000000001d);
+	    
+	}
+	@Test
+    public void calculateRowTotal_NullValue() {
+    	try {
+	        double result = DataUtilities.calculateRowTotal(null, 0);
+	        assertEquals(0, result, .000000001d);
+    	} catch (NullPointerException e) {
+    		// If we get an error then this test case has failed
+    		fail("NullPointerException was thrown!");
+    	}
+    }
 }
