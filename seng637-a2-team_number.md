@@ -145,6 +145,23 @@ getUpperBoundWithUpperNanValue | null | TODO
 getUpperBoundWithSameValue | null | TODO
 getUpperBoundWithMaximumValue| null | TODO
 
+### `Range.combine()`
+
+Test case | Input partitions | Status
+--- | --- | ---
+combineWithBLB | <-1.1, 0>, <-1.0, 1.0> | FAIL
+combineWithALB | <-0.9, 0>, <-1.0, 1.0> | FAIL
+combineWithBUB | <0, 0.9>, <-1.0, 1.0> | FAIL
+combineWithAUB | <0, 1.1>, <-1.0, 1.0> | FAIL
+combineWithLB| <-1.0, 0.5>, <-1.0, 1.0> | PASS
+combineWithUB| <0, 1.0>, <-1.0, 1.0> | FAIL
+combineWithNOM| <-0.5, 0.5>, <-1.0, 1.0> | FAIL
+combineWithBothNull| null, null | PASS
+combineWithFirstNull| null, <-1.0, 1.0> | PASS
+combineWithSecondNull| <-1.0, 1.0>, null | PASS
+combineWithSameRanges| <-1.0, 1.0>, <-1.0, 1.0> | PASS
+
+
 # 4 - How the team work/effort was divided and managed
 
 Given a total of 10 methods to be tested, every member of the group was assigned the responsibility of testing 2 methods.
