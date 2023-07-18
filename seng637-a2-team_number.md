@@ -20,7 +20,7 @@ To carry out the testing, black-box test case design techniques such as equivale
 
 # 2 - Detailed description of unit test strategy
 
-The overall test strategy involved several steps to ensure thorough testing of each method. Firstly, the requirements of each method were carefully examined by referring to the provided JDoc. Based on this understanding, a variety of test cases were designed for each method, including normal inputs, boundary conditions, and error cases where exceptions should be thrown.  Next, the test code was written and executed to carry out the actual testing process. Once the tests were completed, the entire team participated in a review session to assess the test cases and analyze the results. This collaborative discussion allowed for valuable insights and ensured a comprehensive evaluation of the test strategy which is captured in the difficulties encountered, challenges overcome, and lessons learned section.
+The overall test strategy involved several steps to ensure thorough testing of each method. Firstly, the requirements of each method were carefully examined by referring to the provided javadocs. Based on this understanding, a variety of test cases were designed for each method, including normal inputs, boundary conditions, and error cases where exceptions should be thrown.  Next, the test code was written and executed to carry out the actual testing process. Once the tests were completed, the entire team participated in a review session to assess the test cases and analyze the results. This collaborative discussion allowed for valuable insights and ensured a comprehensive evaluation of the test strategy which is captured in the difficulties encountered, challenges overcome, and lessons learned section.
 
 Procedurally the assignment was successfully completed by following these steps:
 1. Select 5 methods out of the 15 provided in the Range class for testing purposes.
@@ -32,7 +32,7 @@ Procedurally the assignment was successfully completed by following these steps:
 
 ## **DataUtilities**
 
-jMock is used to mock the interfaces `Values2D` and `KeyedValues`. `Values2D` object is mocked as a 3*3 matrix holding double values. `KeyedValues` object is mocked holding Integer as key-value pairs. 
+jMock is employed to mock the interfaces Values2D and KeyedValues. The Values2D object is mocked as a 3*3 matrix, holding double values. Similarly, the KeyedValues object is mocked, containing Integer key-value pairs.
 
 In the testing of the methods within this class, we will assess a range of scenarios when possible to test all equivalence classes and all boundary value cases. These include using various column indices such as negative values, zero, and values greater than the total number of columns in the data. Additionally, we will examine different data values, including positive numbers, zero, negative numbers, and NaN. Furthermore, we will test with data that contains duplicate keys and data that has keys in a non-ascending order.
 
