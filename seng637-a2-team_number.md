@@ -132,18 +132,18 @@ Test case | Input partitions | Status
 getLowerBoundWithNormalValues | <-1.0, 1.0> | PASS
 getLowerBoundWithLowerNanValue | <Nan, 1.0> | PASS
 getLowerBoundWithUpperNanValue | <-1.0, Nan> | PASS
-getLowerBoundWithSameValue | <1.0,1.0> | PASS
-getLowerBoundWithMinimumValue| null | PASS
+getLowerBoundWithSameValue | <0.5, 0.5> | PASS
+getLowerBoundWithMinimumValue| <Double.MIN_NORMAL, 1.0> | PASS
 
 ### `Range.getUpperBound()`
 
 Test case | Input partitions | Status
 --- | --- | ---
-getUpperBoundWithNormalValues | null | FAIL
-getUpperBoundWithLowerNanValue | null | FAIL
-getUpperBoundWithUpperNanValue | null | FAIL
-getUpperBoundWithSameValue | null | PASS
-getUpperBoundWithMaximumValue| null | FAIL
+getUpperBoundWithNormalValues | <-1.0, 1.0> | FAIL
+getUpperBoundWithLowerNanValue | <Nan, 1.0> | FAIL
+getUpperBoundWithUpperNanValue | <-1.0, Nan> | FAIL
+getUpperBoundWithSameValue | <0.5, 0.5> | PASS
+getUpperBoundWithMaximumValue| <-1.0, Double.Max_VALUE> | FAIL
 
 ### `Range.combine()`
 
