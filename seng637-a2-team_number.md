@@ -89,6 +89,21 @@ testCalculateColumnTotal_Values2DWithNaN | [NaN, 50.0, 100.0], 0 | Pass
 | testGetCumulativePercentages_NullKeyedValues           | null                                        | Pass   |
 | testGetCumulativePercentages_ZeroValues                | <0, 0.0>, <1, 0.0>, <2, 0.0>               | FAIL   |
 
+### `DataUtilities.calculateRowTotal(Values2D, int)`
+Test case | Input partitions | Status
+--- | --- | ---
+calculateRowTotalPositiveFirstRow | 0,[10.0, 20.0, 30.0] | FAIL
+calculateRowTotalPositiveSecondRow | 1,[10.0, 20.0, 30.0] | FAIL
+calculateRowTotalPositiveThirdRow | 2,[10.0, 20.0, 30.0]| FAIL
+calculateRowTotalNegativeThirdRow | 0,[-10.0, -20.0, -30.0]| FAIL
+calculateRowTotalMaxValueFirstRow |0, [Double.MAX_VALUE, 50.0, -50.0] | Pass
+calculateRowTotalMinValueFirstRow |0, [Double.MIN_VALUE, 50.0, -50.0] | FAIL
+calculateRowTotalMaxIndexFirstRow | Integer.MAX_VALUE,[10.0, 20.0, 30.0],  | FAIL
+calculateRowTotalMinIndexFirstRow | Integer.MIN_VALUE[10.0, 20.0, 30.0] | FAIL
+calculateRowTotal_NullValues2D | 0,null | FAIL
+calculateRowTotalEmpty| [], 0 | Pass
+calculateRowTotalNanFirstRow | 0,[NaN, 50.0, -50.0] | Pass
+
 ### `DataUtilities.createNumberArray2D(double[][] data)`
 
 | Test case                                              | Input partitions                            | Status |
