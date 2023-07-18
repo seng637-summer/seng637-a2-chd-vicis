@@ -135,21 +135,21 @@ calculateRowTotalNanFirstRow | 0,[NaN, 50.0, -50.0] | Pass
 
 Test case | Input partitions | Status
 --- | --- | ---
-testToStringValidRange | null | FAIL
-testToStringSingletonRange | null | Pass
-testToStringBoundaryLowerRange | null | FAIL
-testToStringBoundaryUpperRange | null | FAIL
-testToStringBoundarySingletonRange| null | Pass
+testToStringValidRange | [-1.0,1.0] | FAIL
+testToStringSingletonRange | [0.0,0.0] | Pass
+testToStringBoundaryLowerRange | [-1.0,-0.9] | FAIL
+testToStringBoundaryUpperRange | [0.9,1.0] | FAIL
+testToStringBoundarySingletonRange| [-1.0,-1.0] | Pass
 
 ### `Range.getLength()`
 
 Test case | Input partitions | Status
 --- | --- | ---
-testGetLengthValidRange | null | Pass
-testGetLengthSingletonRange | null | Pass
-testGetLengthBoundaryLowerRange | null | Pass
-testGetLengthBoundaryUpperRange | null | Pass
-testGetLengthBoundarySingletonRange| null | Pass
+testGetLengthValidRange | (-1.0, 1.0) | Pass
+testGetLengthSingletonRange | (0.0, 0.0) | Pass
+testGetLengthBoundaryLowerRange | (-1.0, -0.9) | Pass
+testGetLengthBoundaryUpperRange | (0.9, 1.0) | Pass
+testGetLengthBoundarySingletonRange| (-1.0, -1.0) | Pass
 
 ### `Range.getLowerBound()`
 
