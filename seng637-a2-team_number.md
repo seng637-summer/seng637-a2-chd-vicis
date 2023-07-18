@@ -103,6 +103,18 @@ calculateRowTotal_NullValues2D | 0,null | FAIL
 calculateRowTotalEmpty| [], 0 | Pass
 calculateRowTotalNanFirstRow | 0,[NaN, 50.0, -50.0] | Pass
 
+### `DataUtilities.createNumberArray(double[] data)`
+| Test case                                              | Input partitions                            | Status |
+| ------------------------------------------------------ | ------------------------------------------- | ------ |
+| createNumberArrayPositive         | [1.0,2.2,3.7]                                          | FAIL  |
+| createNumberArrayNegative      | [-1.0,-2.2,-3.7]                              | FAIL   |
+| createNumberArrayNullInput | null                                 | Pass |
+| createNumberArrayEmpty |                                  | Pass   |
+| createNumberArraySingle  | [1.0] | FAIL   |
+| createNumberArrayZero         | [0.0]                   | FAIL   |
+| createNumberArrayMaxThree           | [Double.MAX_VALUE,   Double.MAX_VALUE,Double.MAX_VALUE]                                     | FAIL    |
+| createNumberArrayMinThree               | [Double.MIN_VALUE,   Double.MIN_VALUE,Double.MIN_VALUE]              | FAIL   |
+
 ### `DataUtilities.createNumberArray2D(double[][] data)`
 
 | Test case                                              | Input partitions                            | Status |
