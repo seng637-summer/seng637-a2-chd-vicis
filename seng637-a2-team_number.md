@@ -97,7 +97,7 @@ testCalculateColumnTotal_Values2DWithNaN | [NaN, 50.0, 100.0], 0 | Pass
 | testCreateNumberArray2DAllPositiveValues()       | 2X2 matrix filled with 0.5                                     | Pass   |
 | testCreateNumberArray2DLargeArray() | 4X4 matrix filled with -0.5 and 0.5                                   | FAIL   |
 | testCreateNumberArray2DSmallArray() | 2X2 matrix filled with -0.5 and 0.5                                  |  FAIL  |
-| testCreateNumberArray2DEmpty()  | empty matrix |  FAIL  |
+| testCreateNumberArray2DEmpty()  | empty matrix |  Pass  |
 | testCreateNumberArray2DBLB()         | 2X2 matrix filled with -1.1                     | FAIL   |
 | testCreateNumberArray2DALB()           | 2X2 matrix filled with -0.9                                        | FAIL   |
 | testCreateNumberArray2DBUB()                | 2X2 matrix filled with 0.9                | FAIL   |
