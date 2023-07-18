@@ -43,51 +43,49 @@ public class RangeTest {
     
     @Test
     public void getLowerBoundWithSameValue() {
-    	Range r = new Range(1.0, 1.0);
+    	Range r = new Range(0.5, 0.5);
         assertEquals("The lower range between a Nan and 10.0 should be Nan",
-        1.0, r.getLowerBound(), .000000001d);
+        0.5, r.getLowerBound(), .000000001d);
     }
     
     @Test
     public void getLowerBoundWithMinimumValue() {
-    	Range r = new Range(Double.MIN_NORMAL, 2.0);
+    	Range r = new Range(Double.MIN_VALUE, 1.0);
         assertEquals("The lower range between a Nan and 10.0 should be Nan",
-        Double.MIN_NORMAL, r.getLowerBound(), .000000001d);
+        Double.MIN_VALUE, r.getLowerBound(), .000000001d);
     }
 
     //getUpperBound tests
-    
     @Test
     public void getUpperBoundWithNormalValues() {
-    	Range r = new Range(2.0, 10.0);
         assertEquals("The upper range between 2.0 and 10.0 should be Nan",
-        10.0, r.getUpperBound(), .000000001d);
+        1.0, exampleRange.getUpperBound(), .000000001d);
     }
     
     @Test
     public void getUpperBoundWithLowerNanValue() {
-    	Range r = new Range(Double.NaN, 10.0);
+    	Range r = new Range(Double.NaN, 1.0);
         assertEquals("The upper range between a Nan and 10.0 should be 10.0",
-        10.0, r.getUpperBound(), .000000001d);
+        1.0, r.getUpperBound(), .000000001d);
     }
     
     @Test
     public void getUpperBoundWithUpperNanValue() {
-    	Range r = new Range(2.0, Double.NaN);
+    	Range r = new Range(-1.0, Double.NaN);
         assertEquals("The upper range between a 2.0 and a Nan values should be a Nan value",
         Double.NaN, r.getUpperBound(), .000000001d);
     }
     
     @Test
     public void getUpperBoundWithSameValue() {
-    	Range r = new Range(2.0, 2.0);
+    	Range r = new Range(0.5, 0.5);
         assertEquals("The upper range between the same numbers should be the same",
-        2.0, r.getUpperBound(), .000000001d);
+        0.5, r.getUpperBound(), .000000001d);
     }
     
     @Test
     public void getUpperBoundWithMaximumValue() {
-    	Range r = new Range(2.0, Double.MAX_VALUE);
+    	Range r = new Range(-1.0, Double.MAX_VALUE);
         assertEquals("The lower range between a Nan and 10.0 should be Nan",
         Double.MAX_VALUE, r.getUpperBound(), .000000001d);
     }
