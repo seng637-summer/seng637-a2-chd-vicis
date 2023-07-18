@@ -32,7 +32,7 @@ Procedurally the assignment was successfully completed by following these steps:
 
 ## **DataUtilities**
 
-jMock is employed to mock the interfaces Values2D and KeyedValues. The Values2D object is mocked as a 3*3 matrix, holding double values. Similarly, the KeyedValues object is mocked, containing Integer key-value pairs.
+Mocking was used to mock the interfaces Values2D and KeyedValues. The Values2D object is mocked as a 3*3 matrix, holding double values. Similarly, the KeyedValues object is mocked, containing Integer key-value pairs.
 
 In the testing of the methods within this class, we will assess a range of scenarios when possible to test all equivalence classes and all boundary value cases. These include using various column indices such as negative values, zero, and values greater than the total number of columns in the data. Additionally, we will examine different data values, including positive numbers, zero, negative numbers, and NaN. Furthermore, we will test with data that contains duplicate keys and data that has keys in a non-ascending order.
 
