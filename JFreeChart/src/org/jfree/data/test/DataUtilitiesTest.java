@@ -257,7 +257,9 @@ public class DataUtilitiesTest extends DataUtilities {
         KeyedValues result = DataUtilities.getCumulativePercentages(kv);
         Arrays.asList(0, 1, 2).forEach(key -> assertNull(result.getValue(key)));
     }
-    
+
+
+    // tests for createNumberArray2D
     @Test
     public void testCreateNumberArray2DAllNegativeValues() {
     	double[][] doubleArray = { { -0.5, -0.5 }, { -0.5, -0.5 } };
