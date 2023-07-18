@@ -93,17 +93,17 @@ testCalculateColumnTotal_Values2DWithNaN | [NaN, 50.0, 100.0], 0 | Pass
 
 | Test case                                              | Input partitions                            | Status |
 | ------------------------------------------------------ | ------------------------------------------- | ------ |
-| testCreateNumberArray2DAllNegativeValues()         | 2X2 matrix filled with -0.5                                          |    |
-| testCreateNumberArray2DAllPositiveValues()       | 2X2 matrix filled with 0.5                                     |    |
-| testCreateNumberArray2DLargeArray() | 4X4 matrix filled with -0.5 and 0.5                                   |    |
-| testCreateNumberArray2DSmallArray() | 2X2 matrix filled with -0.5 and 0.5                                  |    |
-| testCreateNumberArray2DEmpty()  | empty matrix |    |
-| testCreateNumberArray2DBLB()         | 2X2 matrix filled with -1.1                     |    |
-| testCreateNumberArray2DALB()           | 2X2 matrix filled with -0.9                                        |    |
-| testCreateNumberArray2DBUB()                | 2X2 matrix filled with 0.9                |    |
-| testCreateNumberArray2DAUB()        | 2X2 matrix filled with 1.1                     |    |
-| testCreateNumberArray2DUB()           | 2X2 matrix filled with 1.0                                         |    |
-| testCreateNumberArray2DLB()                | 2X2 matrix filled with -1.0               |    |
+| testCreateNumberArray2DAllNegativeValues()         | 2X2 matrix filled with -0.5                                          |  Pass  |
+| testCreateNumberArray2DAllPositiveValues()       | 2X2 matrix filled with 0.5                                     | Pass   |
+| testCreateNumberArray2DLargeArray() | 4X4 matrix filled with -0.5 and 0.5                                   | FAIL   |
+| testCreateNumberArray2DSmallArray() | 2X2 matrix filled with -0.5 and 0.5                                  |  FAIL  |
+| testCreateNumberArray2DEmpty()  | empty matrix |  FAIL  |
+| testCreateNumberArray2DBLB()         | 2X2 matrix filled with -1.1                     | FAIL   |
+| testCreateNumberArray2DALB()           | 2X2 matrix filled with -0.9                                        | FAIL   |
+| testCreateNumberArray2DBUB()                | 2X2 matrix filled with 0.9                | FAIL   |
+| testCreateNumberArray2DAUB()        | 2X2 matrix filled with 1.1                     | FAIL   |
+| testCreateNumberArray2DUB()           | 2X2 matrix filled with 1.0                                         |   FAIL |
+| testCreateNumberArray2DLB()                | 2X2 matrix filled with -1.0               | FAIL   |
 
 ### `Range.toString()`
 
@@ -129,11 +129,11 @@ testGetLengthBoundarySingletonRange| null | Pass
 
 Test case | Input partitions | Status
 --- | --- | ---
-getLowerBoundWithNormalValues | <-1.0, 1.0> | PASS
-getLowerBoundWithLowerNanValue | <Nan, 1.0> | PASS
-getLowerBoundWithUpperNanValue | <-1.0, Nan> | PASS
-getLowerBoundWithSameValue | <0.5, 0.5> | PASS
-getLowerBoundWithMinimumValue| <Double.MIN_NORMAL, 1.0> | PASS
+getLowerBoundWithNormalValues | <-1.0, 1.0> | Pass
+getLowerBoundWithLowerNanValue | <Nan, 1.0> | Pass
+getLowerBoundWithUpperNanValue | <-1.0, Nan> | Pass
+getLowerBoundWithSameValue | <0.5, 0.5> | Pass
+getLowerBoundWithMinimumValue| <Double.MIN_NORMAL, 1.0> | Pass
 
 ### `Range.getUpperBound()`
 
@@ -142,7 +142,7 @@ Test case | Input partitions | Status
 getUpperBoundWithNormalValues | <-1.0, 1.0> | FAIL
 getUpperBoundWithLowerNanValue | <Nan, 1.0> | FAIL
 getUpperBoundWithUpperNanValue | <-1.0, Nan> | FAIL
-getUpperBoundWithSameValue | <0.5, 0.5> | PASS
+getUpperBoundWithSameValue | <0.5, 0.5> | Pass
 getUpperBoundWithMaximumValue| <-1.0, Double.Max_VALUE> | FAIL
 
 ### `Range.combine()`
@@ -153,13 +153,13 @@ combineWithBLB | <-1.1, 0>, <-1.0, 1.0> | FAIL
 combineWithALB | <-0.9, 0>, <-1.0, 1.0> | FAIL
 combineWithBUB | <0, 0.9>, <-1.0, 1.0> | FAIL
 combineWithAUB | <0, 1.1>, <-1.0, 1.0> | FAIL
-combineWithLB| <-1.0, 0.5>, <-1.0, 1.0> | PASS
+combineWithLB| <-1.0, 0.5>, <-1.0, 1.0> | Pass
 combineWithUB| <0, 1.0>, <-1.0, 1.0> | FAIL
 combineWithNOM| <-0.5, 0.5>, <-1.0, 1.0> | FAIL
-combineWithBothNull| null, null | PASS
-combineWithFirstNull| null, <-1.0, 1.0> | PASS
-combineWithSecondNull| <-1.0, 1.0>, null | PASS
-combineWithSameRanges| <-1.0, 1.0>, <-1.0, 1.0> | PASS
+combineWithBothNull| null, null | Pass
+combineWithFirstNull| null, <-1.0, 1.0> | Pass
+combineWithSecondNull| <-1.0, 1.0>, null | Pass
+combineWithSameRanges| <-1.0, 1.0>, <-1.0, 1.0> | Pass
 
 
 # 4 - How the team work/effort was divided and managed
