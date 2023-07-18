@@ -93,8 +93,8 @@ testCalculateColumnTotal_Values2DWithNaN | [NaN, 50.0, 100.0], 0 | Pass
 
 | Test case                                              | Input partitions                            | Status |
 | ------------------------------------------------------ | ------------------------------------------- | ------ |
-| testCreateNumberArray2DAllNegativeValues()         | 2X2 matrix filled with -0.5                                          |  Pass  |
-| testCreateNumberArray2DAllPositiveValues()       | 2X2 matrix filled with 0.5                                     | Pass   |
+| testCreateNumberArray2DAllNegativeValues()         | 2X2 matrix filled with -0.5                                          |  FAIL  |
+| testCreateNumberArray2DAllPositiveValues()       | 2X2 matrix filled with 0.5                                     | FAIL   |
 | testCreateNumberArray2DLargeArray() | 4X4 matrix filled with -0.5 and 0.5                                   | FAIL   |
 | testCreateNumberArray2DSmallArray() | 2X2 matrix filled with -0.5 and 0.5                                  |  FAIL  |
 | testCreateNumberArray2DEmpty()  | empty matrix |  Pass  |
