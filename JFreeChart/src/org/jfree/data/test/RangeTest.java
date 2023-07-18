@@ -23,30 +23,29 @@ public class RangeTest {
     // getLowerBound tests
     @Test
     public void getLowerBoundWithNormalValues() {
-    	Range r = new Range(2.0, 10);
         assertEquals("The lower range between 2.0 and 10.0 should be 2.0",
-        2.0, r.getLowerBound(), .000000001d);
+        -1.0, exampleRange.getLowerBound(), .000000001d);
     }
     
     @Test
     public void getLowerBoundWithLowerNanValue() {
-    	Range r = new Range(Double.NaN, 10);
+    	Range r = new Range(Double.NaN, 1);
         assertEquals("The lower range between a Nan and 10.0 should be Nan",
         Double.NaN, r.getLowerBound(), .000000001d);
     }
     
     @Test
     public void getLowerBoundWithUpperNanValue() {
-    	Range r = new Range(2.0, Double.NaN);
+    	Range r = new Range(-1.0, Double.NaN);
         assertEquals("The lower range between a Nan and 10.0 should be Nan",
-        2.0, r.getLowerBound(), .000000001d);
+        -1.0, r.getLowerBound(), .000000001d);
     }
     
     @Test
     public void getLowerBoundWithSameValue() {
-    	Range r = new Range(2.0, 2.0);
+    	Range r = new Range(1.0, 1.0);
         assertEquals("The lower range between a Nan and 10.0 should be Nan",
-        2.0, r.getLowerBound(), .000000001d);
+        1.0, r.getLowerBound(), .000000001d);
     }
     
     @Test
