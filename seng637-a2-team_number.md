@@ -12,7 +12,7 @@
 
 # 1 - Introduction
 
-The primary objective of this assignment was to conduct testing on 10 methods, with 5 methods from each of the Range class and DataUtilities class.
+The primary objective of this assignment was to conduct automated unit testing on 10 methods, with 5 methods from each of the Range class and DataUtilities class.
 
 The Range class is responsible for representing an unchangeable range of values, while the DataUtilities class contains utility methods designed for use with specific data classes. It should be noted that certain methods in the DataUtilities class utilize the Values2D and KeyedValues interfaces as input parameters. As a result, Mocking techniques might be employed to test these DataUtilities methods effectively.
 
@@ -149,13 +149,13 @@ getUpperBoundWithMaximumValue| <-1.0, Double.Max_VALUE> | FAIL
 
 Test case | Input partitions | Status
 --- | --- | ---
-combineWithBLB | <-1.1, 0>, <-1.0, 1.0> | FAIL
-combineWithALB | <-0.9, 0>, <-1.0, 1.0> | FAIL
-combineWithBUB | <0, 0.9>, <-1.0, 1.0> | FAIL
-combineWithAUB | <0, 1.1>, <-1.0, 1.0> | FAIL
+combineWithBLB | <-1.1, 0>, <-1.0, 1.0> | Pass
+combineWithALB | <-0.9, 0>, <-1.0, 1.0> | Pass
+combineWithBUB | <0, 0.9>, <-1.0, 1.0> | Pass
+combineWithAUB | <0, 1.1>, <-1.0, 1.0> | Pass
 combineWithLB| <-1.0, 0.5>, <-1.0, 1.0> | Pass
-combineWithUB| <0, 1.0>, <-1.0, 1.0> | FAIL
-combineWithNOM| <-0.5, 0.5>, <-1.0, 1.0> | FAIL
+combineWithUB| <0, 1.0>, <-1.0, 1.0> | Pass
+combineWithNOM| <-0.5, 0.5>, <-1.0, 1.0> | Pass
 combineWithBothNull| null, null | Pass
 combineWithFirstNull| null, <-1.0, 1.0> | Pass
 combineWithSecondNull| <-1.0, 1.0>, null | Pass
