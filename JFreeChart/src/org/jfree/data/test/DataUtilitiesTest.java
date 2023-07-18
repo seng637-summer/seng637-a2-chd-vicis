@@ -12,6 +12,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+
 
 public class DataUtilitiesTest extends DataUtilities {
 
@@ -265,7 +270,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { -0.5, -0.5 }, { -0.5, -0.5 } };
         Number[][] expectedArray = { { -0.5, -0.5 }, { -0.5, -0.5 } };
         
-        assertSame("The expected array should be an exact copy of all the negative values", 
+        assertArrayEquals("The expected array should be an exact copy of all the negative values", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
 
@@ -274,7 +279,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { 0.5, 0.5 }, { 0.5, 0.5 } };
         Number[][] expectedArray = { { 0.5, 0.5 }, { 0.5, 0.5 } };
         
-        assertSame("The expected array should be an exact copy of all the positive values", 
+        assertArrayEquals("The expected array should be an exact copy of all the positive values", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
     
@@ -288,7 +293,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { 0.5, -0.5, -0.5, 0.5 }, { -0.5, 0.5, -0.5, 0.5 }, { 0.5, 0.5, -0.5, 0.5 }, { 0.5, 0.5, -0.5, -0.5 } };
         Number[][] expectedArray = { { 0.5, -0.5, -0.5, 0.5 }, { -0.5, 0.5, -0.5, 0.5 }, { 0.5, 0.5, -0.5, 0.5 }, { 0.5, 0.5, -0.5, -0.5 } };
         
-        assertSame("The expected array should be an exact copy of a large array", 
+        assertArrayEquals("The expected array should be an exact copy of a large array", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
     
@@ -297,7 +302,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { -0.5 }, { 0.5 } };
         Number[][] expectedArray = { { -0.5 }, { 0.5 } };
         
-        assertSame("The expected array should be an exact copy of a small array values", 
+        assertArrayEquals("The expected array should be an exact copy of a small array values", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
     
@@ -306,7 +311,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = {};
         Number[][] expectedArray = {};
         
-        assertSame("The expected array should be an exact copy of a null array", 
+        assertArrayEquals("The expected array should be an exact copy of a null array", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
     
@@ -315,7 +320,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { -1.1, -1.1 }, { -1.1, -1.1 } };
         Number[][] expectedArray = { { -1.1, -1.1 }, { -1.1, -1.1 } };
         
-        assertSame("The expected array should be an exact copy with BLB values", 
+        assertArrayEquals("The expected array should be an exact copy with BLB values", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
     
@@ -324,7 +329,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { -0.9, -0.9 }, { -0.9, -0.9 } };
         Number[][] expectedArray = { { -0.9, -0.9 }, { -0.9, -0.9 } };
         
-        assertSame("The expected array should be an exact copy with ALB values", 
+        assertArrayEquals("The expected array should be an exact copy with ALB values", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
     
@@ -333,7 +338,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { 0.9, 0.9 }, { 0.9, 0.9 } };
         Number[][] expectedArray = { { 0.9, 0.9 }, { 0.9, 0.9 } };
         
-        assertSame("The expected array should be an exact copy with BUB values", 
+        assertArrayEquals("The expected array should be an exact copy with BUB values", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
     
@@ -342,7 +347,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { 1.1, 1.1 }, { 1.1, 1.1 } };
         Number[][] expectedArray = { { 1.1, 1.1 }, { 1.1, 1.1 } };
         
-        assertSame("The expected array should be an exact copy with AUB values", 
+        assertArrayEquals("The expected array should be an exact copy with AUB values", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
     
@@ -351,7 +356,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { 1.0, 1.0 }, { 1.0, 1.0 } };
         Number[][] expectedArray = { { 1.0, 1.0 }, { 1.0, 1.0 } };
         
-        assertSame("The expected array should be an exact copy with UB values", 
+        assertArrayEquals("The expected array should be an exact copy with UB values", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
     
@@ -360,7 +365,7 @@ public class DataUtilitiesTest extends DataUtilities {
     	double[][] doubleArray = { { -1.0, -1.0 }, { -1.0, -1.0 } };
         Number[][] expectedArray = { { -1.0, -1.0 }, { -1.0, -1.0 } };
         
-        assertSame("The expected array should be an exact copy with LB values", 
+        assertArrayEquals("The expected array should be an exact copy with LB values", 
         		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
     }
 
