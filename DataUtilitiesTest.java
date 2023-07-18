@@ -1,16 +1,22 @@
-package org.jfree.data;
+package org.jfree.data.test;
+import org.jfree.data.*;
+
 
 import static org.junit.Assert.*;
+
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.jmock.Expectations;
-import org.jmock.Mockery;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
 
 public class DataUtilitiesTest extends DataUtilities {
 
@@ -184,7 +190,7 @@ public class DataUtilitiesTest extends DataUtilities {
     }
     
     
-    // Tests for calculateColumnTotal(Values2D, int)
+    // Tests for getCumulativePercentages(KeyedValues data)
     @Test
     public void testGetCumulativePercentages_EmptyKeyedValues() {
         KeyedValues result = DataUtilities.getCumulativePercentages(kv);
@@ -256,8 +262,114 @@ public class DataUtilitiesTest extends DataUtilities {
         KeyedValues result = DataUtilities.getCumulativePercentages(kv);
         Arrays.asList(0, 1, 2).forEach(key -> assertNull(result.getValue(key)));
     }
-	
-    //Test createNumberArray method
+
+
+    // tests for createNumberArray2D
+    @Test
+    public void testCreateNumberArray2DAllNegativeValues() {
+    	double[][] doubleArray = { { -0.5, -0.5 }, { -0.5, -0.5 } };
+        Number[][] expectedArray = { { -0.5, -0.5 }, { -0.5, -0.5 } };
+        
+        assertSame("The expected array should be an exact copy of all the negative values", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+
+    @Test
+    public void testCreateNumberArray2DAllPositiveValues() {
+    	double[][] doubleArray = { { 0.5, 0.5 }, { 0.5, 0.5 } };
+        Number[][] expectedArray = { { 0.5, 0.5 }, { 0.5, 0.5 } };
+        
+        assertSame("The expected array should be an exact copy of all the positive values", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void testCreateNumberArray2DwithNull() {
+    	DataUtilities.createNumberArray2D(null);
+    	}
+    
+    @Test
+    public void testCreateNumberArray2DLargeArray() {
+    	double[][] doubleArray = { { 0.5, -0.5, -0.5, 0.5 }, { -0.5, 0.5, -0.5, 0.5 }, { 0.5, 0.5, -0.5, 0.5 }, { 0.5, 0.5, -0.5, -0.5 } };
+        Number[][] expectedArray = { { 0.5, -0.5, -0.5, 0.5 }, { -0.5, 0.5, -0.5, 0.5 }, { 0.5, 0.5, -0.5, 0.5 }, { 0.5, 0.5, -0.5, -0.5 } };
+        
+        assertSame("The expected array should be an exact copy of a large array", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+    
+    @Test
+    public void testCreateNumberArray2DSmallArray() {
+    	double[][] doubleArray = { { -0.5 }, { 0.5 } };
+        Number[][] expectedArray = { { -0.5 }, { 0.5 } };
+        
+        assertSame("The expected array should be an exact copy of a small array values", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+    
+    @Test
+    public void testCreateNumberArray2DEmpty() {
+    	double[][] doubleArray = {};
+        Number[][] expectedArray = {};
+        
+        assertSame("The expected array should be an exact copy of a null array", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+    
+    @Test
+    public void testCreateNumberArray2DBLB() {
+    	double[][] doubleArray = { { -1.1, -1.1 }, { -1.1, -1.1 } };
+        Number[][] expectedArray = { { -1.1, -1.1 }, { -1.1, -1.1 } };
+        
+        assertSame("The expected array should be an exact copy with BLB values", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+    
+    @Test
+    public void testCreateNumberArray2DALB() {
+    	double[][] doubleArray = { { -0.9, -0.9 }, { -0.9, -0.9 } };
+        Number[][] expectedArray = { { -0.9, -0.9 }, { -0.9, -0.9 } };
+        
+        assertSame("The expected array should be an exact copy with ALB values", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+    
+    @Test
+    public void testCreateNumberArray2DBUB() {
+    	double[][] doubleArray = { { 0.9, 0.9 }, { 0.9, 0.9 } };
+        Number[][] expectedArray = { { 0.9, 0.9 }, { 0.9, 0.9 } };
+        
+        assertSame("The expected array should be an exact copy with BUB values", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+    
+    @Test
+    public void testCreateNumberArray2DAUB() {
+    	double[][] doubleArray = { { 1.1, 1.1 }, { 1.1, 1.1 } };
+        Number[][] expectedArray = { { 1.1, 1.1 }, { 1.1, 1.1 } };
+        
+        assertSame("The expected array should be an exact copy with AUB values", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+    
+    @Test
+    public void testCreateNumberArray2DUB() {
+    	double[][] doubleArray = { { 1.0, 1.0 }, { 1.0, 1.0 } };
+        Number[][] expectedArray = { { 1.0, 1.0 }, { 1.0, 1.0 } };
+        
+        assertSame("The expected array should be an exact copy with UB values", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+    
+    @Test
+    public void testCreateNumberArray2DLB() {
+    	double[][] doubleArray = { { -1.0, -1.0 }, { -1.0, -1.0 } };
+        Number[][] expectedArray = { { -1.0, -1.0 }, { -1.0, -1.0 } };
+        
+        assertSame("The expected array should be an exact copy with LB values", 
+        		expectedArray, DataUtilities.createNumberArray2D(doubleArray));
+    }
+
+	 //Test createNumberArray method
 	@Test
 	public void createNumberArrayPositive() {
 		double[] testInput = {1.0, 2.2,3.7};
@@ -465,5 +577,15 @@ public class DataUtilitiesTest extends DataUtilities {
     		// If we get an error then this test case has failed
     		fail("NullPointerException was thrown!");
     	}
+    }
+    
+    
+
+    @After
+    public void tearDown() throws Exception {
+    }
+
+    @AfterClass
+    public static void tearDownAfterClass() throws Exception {
     }
 }
