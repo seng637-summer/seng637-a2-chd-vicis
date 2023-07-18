@@ -163,11 +163,12 @@ public class RangeTest {
     }
 
     //combine tests
+    @Test
     public void combineWithBLB() {
     	Range r = new Range(-1.1, 0);
     	Range expected = new Range(-1.1, 1.0);
 
-    	assertSame("The range should be between -1.1 and 1.0", 
+    	assertEquals("The range should be between -1.1 and 1.0", 
         		expected, Range.combine(exampleRange, r));
     }
     
@@ -176,7 +177,7 @@ public class RangeTest {
     	Range r = new Range(-0.9, 0.0);
     	Range expected = new Range(-1.0, 1.0);
 
-    	assertSame("The range should be between -1.0 and 1.0", 
+    	assertEquals("The range should be between -1.0 and 1.0", 
         		expected, Range.combine(r, exampleRange));
     }
     
@@ -185,7 +186,7 @@ public class RangeTest {
     	Range r = new Range(0.0, 0.9);
     	Range expected = new Range(-1.0, 1.0);
 
-    	assertSame("The range should be between -1.0 and 1.0", 
+    	assertEquals("The range should be between -1.0 and 1.0", 
         		expected, Range.combine(r, exampleRange));
     }
     
@@ -194,7 +195,7 @@ public class RangeTest {
     	Range r = new Range(0.0, 1.1);
     	Range expected = new Range(-1.0, 1.1);
 
-    	assertSame("The range should be between -1.0 and 1.1", 
+    	assertEquals("The range should be between -1.0 and 1.1", 
         		expected, Range.combine(r, exampleRange));
     }
     
@@ -203,7 +204,7 @@ public class RangeTest {
     	Range r = new Range(-1.0, 0.5);
     	Range expected = new Range(-1.0, 1.0);
 
-    	assertSame("The range should be between -1.0 and 1.0", 
+    	assertEquals("The range should be between -1.0 and 1.0", 
         		expected, Range.combine( exampleRange, r));
     }
     
@@ -212,7 +213,7 @@ public class RangeTest {
     	Range r = new Range(0.0, 1.0);
     	Range expected = new Range(-1.0, 1.0);
 
-    	assertSame("The range should be between -1.0 and 1.0", 
+    	assertEquals("The range should be between -1.0 and 1.0", 
         		expected, Range.combine(r, exampleRange));
     }
     
@@ -221,7 +222,7 @@ public class RangeTest {
     	Range r = new Range(-0.5, 0.5);
     	Range expected = new Range(-1.0, 1.0);
 
-    	assertSame("The range should be between -1.0 and 1.0", 
+    	assertEquals("The range should be between -1.0 and 1.0", 
         		expected, Range.combine(r, exampleRange));
     }
     
@@ -230,7 +231,7 @@ public class RangeTest {
     	Range r1 = null;
     	Range r2 = null;
 
-    	assertSame("The range should just be null", 
+    	assertEquals("The range should just be null", 
         		null, Range.combine(r1, r2));
     }
     
@@ -239,7 +240,7 @@ public class RangeTest {
     	Range r = null;
     	Range expected = new Range(-1.0, 1.0);
 
-    	assertSame("The range should be between -1.0 and 1.0", 
+    	assertEquals("The range should be between -1.0 and 1.0", 
         		expected, Range.combine(r, exampleRange));
     }
     
@@ -248,7 +249,7 @@ public class RangeTest {
     	Range r = null;
     	Range expected = new Range(-1.0, 1.0);
 
-    	assertSame("The range should be between -1.0 and 1.0", 
+    	assertEquals("The range should be between -1.0 and 1.0", 
         		expected, Range.combine(exampleRange, r));
     }
     
@@ -256,7 +257,7 @@ public class RangeTest {
     public void combineWithSameRanges() {
     	Range expected = new Range(-1.0, 1.0);
 
-    	assertSame("The range should be between -1.0 and 1.0", 
+    	assertEquals("The range should be between -1.0 and 1.0", 
         		expected, Range.combine(exampleRange, exampleRange));
     }
 
